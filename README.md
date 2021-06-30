@@ -44,7 +44,9 @@ Using IRTools is very simple. To facilitate testing, we have included the mouse 
 __Step 1: building reference to extract sequence feature__
 
 ` IRTools.py -m build -g test_genome/mouse.fa -a test_genome/mouse.gtf -i test_index_mouse `
+
 or
+
 ` IRTools.py -m build -g test_genome/mouse.fa -a test_genome/mouse.gtf -i test_index_mouse -p off `
 
 If want to extract branchpoint feature:
