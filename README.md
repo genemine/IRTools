@@ -28,7 +28,7 @@ You can download Ensembl genome and annotation file from [the website of Ensembl
 
 # 3 Install
 
-After downloading the source file, unzip it, and add the IRTools package path to your environmental variable PATH by modifying your .bashrc or .bash_profile file in your home directory.
+After downloading the source file, unzip it, and add the IRTools package path to your environmental variable PATH by modifying your .zshrc or .bashrc or .bash_profile file in your home directory.
 Note 1: In the first line of the Python scripts in IRTools, the path for Python is set as follows by default:
 
 `/usr/bin/env python`
