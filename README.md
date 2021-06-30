@@ -1,7 +1,7 @@
 # 1 IRTools
 ## 1.1 Description
 
-IRTools (A feature extraction tool for intron retention analysis) is a tool to extract intron features from the genome file, annotation file and RNA-seq data file. The use of IRTools is divided into two steps: (1) the first step is to build a reference, that is, to extract intron sequence features based on the species genome and annotation. (2) the second step is to extract intron expression features using the RNA-Seq BAM file. IRTools requires three inputs: the RNA-Seq file, reference genome and annotation file. The output file stores a list of introns together with their sequence and expression features. [Feature_list.xlsx](https://github.com/genemine/IRTools/raw/master/Feature_list.xlsx) describes all the features in detail.
+IRTools (A feature extraction tool for intron retention analysis) is a tool to extract intron features from the genome file, annotation file and RNA-seq data file. The use of IRTools is divided into two steps: (1) the first step is to build a reference, that is, to extract intron sequence features based on the species genome and annotation. (2) the second step is to extract intron expression features using the RNA-Seq BAM file. IRTools requires three inputs: the RNA-Seq file, reference genome and annotation file. The output file stores a list of introns together with their sequence and expression features. [Feature_list.xlsx](https://github.com/genemine/IRTools/blob/master/Feature_list.xlsx) describes all the features in detail.
 
 ## 1.2 Download
 
