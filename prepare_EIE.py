@@ -58,7 +58,7 @@ def unique_intron(start,end,origin_gene_chro):
         return 'None',strand
 
 def get_intron(gtf,chrosomes=list(map(str,range(1,23)))+['X','Y']):
-    print('Get intron from gtf')
+    print('-----> Obtaining intron from gtf')
     gene_coor = {}
     exon_coor = {}
     intron_coor = {}
@@ -188,7 +188,7 @@ EIE_primer = get_EIE_primer(gtf)
 
 ### step2: get EIE and EIE_fa ###
 def get_EIE_and_EIE_fa(EIE_primer):
-    print('Get EIE bed file and EIE fasta file')
+    print('-----> Generating EIE bed file and EIE fasta file')
     with open(EIE_path+'EIE.tab','w') as EIE:
         for eie in EIE_primer:
             EIE.write( '\t'.join( map(str,eie) ) + '\n' )
@@ -211,11 +211,11 @@ if branchpoint_flag == 'off':
 else:
     # branchpoint_flag == 'on'
     # branchpoint fa -> L = 70
-    print('Get branchpoint')
+    print('-----> Extracting branchpoint feature')
     os.system('get_branchpoint.py '+EIE_path+' '+genome) # appended column index of EIE.tab: -1
 
 # build model intron feature
 os.system('build_model_intron_feature.py '+EIE_path+' '+branchpoint_flag) # get static model feature
 ### step2 end: get EIE and fa###
 
-print('EIE model is built successful!')
+print('-----> EIE reference is built successful')

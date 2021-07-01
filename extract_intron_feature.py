@@ -25,7 +25,7 @@ map_reads, layout = get_map_reads(map_reads_file) # all map reads, if layout is 
 bias_intron = 6+20 # bias: calculated for intron length, 5ss:9-3=6 bases,3ss:23-3=20 bases
 bias_exon = 3 # 3 bases for exon
 # pre-filter bam file must overlap with EIE.bed
-print('Pre-filter bam file')
+print('-----> Filtering bam file')
 bamtobed_file = output+'bamtobed.bed'
 os.system('samtools view -b -q 255 -@ '+str(threads)+' -L '+EIE_path+'EIE.bed'+' '+BAM_file+\
     ' | bedtools bamtobed -split -i stdin '+\
@@ -93,7 +93,7 @@ def extract_feature_bam(line_num):
 
 from multiprocessing import Pool
 if __name__=="__main__":
-    print('Calculate feature')
+    print('-----> Calculating expression feature')
     EIE_num = int(os.popen('cat '+EIE_path+'model_intron_feature.txt | wc -l').read().strip())
     single_num = EIE_num // threads
     line_start = []
@@ -148,11 +148,11 @@ if __name__=="__main__":
         first_line.remove('up_2_branchpoint');first_line.remove('up_1_branchpoint');first_line.remove('branchpoint');first_line.remove('down_1_branchpoint')
         first_line.remove('down_2_branchpoint');first_line.remove('down_3_branchpoint');first_line.remove('down_4_branchpoint');first_line.remove('down_5_branchpoint')
     else: # should not be occurred
-        print('Index occurred an error, wrong number of features!')
+        print('-----> Index occurred an error, wrong number of features!')
     m_i_f = open(EIE_path+'model_intron_feature.txt')
     f_i = open(output+'feature_intron.txt','w')
     f_i.write('\t'.join(first_line)+'\n')
-    print('Merge all feature')
+    print('-----> Merging all feature')
     for i,val in enumerate(m_i_f):
         l_l = val.strip().split('\t')
         l_r = feature_data_bam[i]
@@ -161,4 +161,4 @@ if __name__=="__main__":
     m_i_f.close()
     f_i.close()
 
-    print('Intron feature of bam is extracted successful')
+    print('-----> Intron features are extracted successful')
